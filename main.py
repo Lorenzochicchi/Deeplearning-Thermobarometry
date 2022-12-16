@@ -135,8 +135,8 @@ if st.button('Starting prediction'):
   titles = ['pressure distribution', 'temperature distribution']
   fig, ax = plt.subplots(1,2)
   for tg in [0,1]:
-    x = df['mean - ' + targets[tg]].values.reshape(-1, 1)
-    ax[tg].hist(df['mean - ' + targets[tg_k]].values,  bins=[i/2 for i in range(-10,21)], density=True, edgecolor='k', color='tab:green',label='hist')
+    x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
+    ax[tg].hist(df_output['mean - ' + targets[tg_k]].values,  bins=[i/2 for i in range(-10,21)], density=True, edgecolor='k', color='tab:green',label='hist')
     ax[tg].title(titles[tg], fontsize=13)
     ax[tg].xlabel(targets[tg], fontsize=13)
   st.pyplot(fig)
