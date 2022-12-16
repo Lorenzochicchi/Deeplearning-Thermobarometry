@@ -44,7 +44,7 @@ def predict(data):
 
   if control ==0:
 
-    for tg in [0,1]:
+    for tg in [0]:
 
       if tg == 0:
           directory = 'Pressure_models'  
