@@ -77,7 +77,7 @@ def convert_df(df):
 
 def plothist(df):
   targets = ['P (kbar)', 'T (K)']
-  for tg=[0,1]:
+  for tg in [0,1]:
     x = df['mean - ' + targets[tg]].values.reshape(-1, 1)
     plt.figure()
     plt.hist(df['mean - ' + targets[tg_k]].values,  bins=[i/2 for i in range(-10,21)], density=True, edgecolor='k', color='tab:green',label='hist')
