@@ -88,18 +88,29 @@ def predict(data):
   return df_output
 
 
-pred_butt = st.button('Starting prediction', key='go')
+@st.cache
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
 
 if st.button('Starting prediction'):
   df_output = predict(df)
-
+  csv = convert_df(df_output )
+  
   st.write('Predicted values:')
-
-  st.download_button('Download prediction', df_output)
 
   st.checkbox("Use container width", value=False, key="use_container_width")
 
   st.dataframe(df_output, use_container_width=st.session_state.use_container_width)
+  st.download_button(
+      label="Download data as CSV",
+      data=csv,
+      file_name='large_df.csv',
+      mime='text/csv',
+  )
+  
+
 
 
 
