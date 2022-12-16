@@ -131,7 +131,7 @@ if st.button('Starting prediction'):
   
   st.write('Predicted values:')
   st.dataframe(df_output)
-  targets = ['P (kbar)', 'T (C)']
+  targets = ['P (kbar)', 'T (K)']
   titles = ['pressure distribution', 'temperature distribution']
   fig, ax = plt.subplots(1,2)
   for tg in [0,1]:
