@@ -103,15 +103,15 @@ if uploaded_file is not None:
 if st.button('Starting prediction'):
   df_output = predict(df)
   csv = convert_df(df_output )
-  towrite = io.BytesIO()
-  excel = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
+  #towrite = io.BytesIO()
+  #excel = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
 
-  st.download_button(
-      label="Download data as xlsx",
-      data=excel,
-      file_name= 'Prediction'+nametuple[0]+'.xlsx',
-      mime='application/vnd.ms-excel'
-  )
+  #st.download_button(
+  #    label="Download data as xlsx",
+  #    data=excel,
+  #    file_name= 'Prediction'+nametuple[0]+'.xlsx',
+  #    mime='application/vnd.ms-excel'
+  #)
   st.download_button(
       label="Download data as csv",
       data=df_output,
