@@ -81,7 +81,7 @@ def plothist(df):
     x = df['mean - ' + targets[tg]].values.reshape(-1, 1)
     plt.figure()
     plt.hist(df['mean - ' + targets[tg_k]].values,  bins=[i/2 for i in range(-10,21)], density=True, edgecolor='k', color='tab:green',label='hist')
-    plt.title(pressure distribution, fontsize=13)
+    plt.title('pressure distribution', fontsize=13)
     plt.xlabel('P(kbar)', fontsize=13)
     plt.show()  
 
