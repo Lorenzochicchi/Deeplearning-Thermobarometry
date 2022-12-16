@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import pickle
 import os
-
+import io
 
 def predict(data):
   control = 0 
