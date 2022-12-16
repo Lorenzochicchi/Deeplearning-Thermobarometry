@@ -137,8 +137,8 @@ if st.button('Starting prediction'):
   for tg in [0,1]:
     x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
     ax[tg].hist(df_output['mean - ' + targets[tg]].values,  bins=[i/2 for i in range(-10,21)], density=True, edgecolor='k', color='tab:green',label='hist')
-    ax[tg].title(titles[tg], fontsize=13)
-    ax[tg].xlabel(targets[tg], fontsize=13)
+    ax[tg].set_title(titles[tg], fontsize=13)
+    ax[tg].set_xlabel(targets[tg], fontsize=13)
   st.pyplot(fig)
 
 
