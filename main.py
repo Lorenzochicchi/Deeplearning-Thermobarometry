@@ -84,7 +84,8 @@ def plothist(df):
     plt.xlabel('P(kbar)', fontsize=13)
     plt.show()  
 
-  
+
+st.beta_set_page_config(page_title='Deep learning thermobarometer', page_icon = favicon, layout = 'wide', initial_sidebar_state = 'auto')
 st.title("Deeplearning 4 Vulcanoes")
 st.header("A deep learning based model to predict temperatures and pressures of vulcanos" )
 st.text("The D4V model take as input a dataset of clinopyroxene concentrations..")
