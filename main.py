@@ -10,8 +10,6 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import pickle
 import os
-import io
-
 
 
 def predict(data):
@@ -112,9 +110,10 @@ if st.button('Starting prediction'):
   #    file_name= 'Prediction'+nametuple[0]+'.xlsx',
   #    mime='application/vnd.ms-excel'
   #)
+  
   st.download_button(
       label="Download data as csv",
-      data=df_output,
+      data=csv,
       file_name= 'Prediction'+nametuple[0]+'.csv',
       mime='text/csv',
   )
