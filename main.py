@@ -81,7 +81,6 @@ im = Image.open("D4V.ico")
 st.set_page_config(
     page_title="D4V",
     page_icon=im,
-    layout="wide",
 )
 
 #st.beta_set_page_config(page_title='Deep learning thermobarometer', page_icon = favicon, layout = 'wide', initial_sidebar_state = 'auto')
@@ -136,7 +135,7 @@ if st.button('Starting prediction'):
   fig, ax = plt.subplots(1,2)
   for tg in [0,1]:
     x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
-    ax[tg].hist(df_output['mean - ' + targets[tg]].values,  bins=[i/2 for i in range(-10,21)], density=True, edgecolor='k', color='tab:green',label='hist')
+    ax[tg].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color='tab:green',label='hist')
     ax[tg].set_title(titles[tg], fontsize=13)
     ax[tg].set_xlabel(targets[tg], fontsize=13)
   st.pyplot(fig)
