@@ -9,26 +9,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import pickle
+import os
 
-st.title("Deep 4 Vulcanos")
-st.header("A deep learning based model to predict temperatures and pressures of vulcanos" )
-st.text("The D4V model take as input a dataset of clinopyroxene concentrations...")
-
-
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-  filename = uploaded_file.name
-
-  if filename[-3:] == 'csv':
-    #read csv
-    df = pd.read_csv(uploaded_file)
-    st.dataframe(df)
-  elif filename[-3:] == 'xls' or filename[-4:] == 'xlsx':
-    #read xls or xlsx
-    df = pd.read_excel(uploaded_file)
-    st.dataframe(df)
-  else:
-    st.warning("File type wrong (you need to upload a csv, xls or xlsx file)")
 
 
 def predict(data):
@@ -44,7 +26,7 @@ def predict(data):
 
   if control ==0:
 
-    for tg in [0]:
+    for tg in [0,1]:
 
       if tg == 0:
           directory = 'Pressure_models'  
@@ -93,23 +75,48 @@ def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 
+  
+st.title("Deep 4 Vulcanos")
+st.header("A deep learning based model to predict temperatures and pressures of vulcanos" )
+st.text("The D4V model take as input a dataset of clinopyroxene concentrations...")
+
+
+uploaded_file = st.file_uploader("Choose a file")
+if uploaded_file is not None:
+  filename = uploaded_file.name
+  nametuple = os.path.splitext(filename)
+
+  if nametuple[1] == '.csv':
+    #read csv
+    df = pd.read_csv(uploaded_file)
+    st.dataframe(df)
+  elif nametuple[1] == '.xls' or nametuple[1] == '.xlsx':
+    #read xls or xlsx
+    df = pd.read_excel(uploaded_file)
+    st.dataframe(df)
+  else:
+    st.warning("File type wrong (you need to upload a csv, xls or xlsx file)") 
+
+
 
 if st.button('Starting prediction'):
   df_output = predict(df)
   csv = convert_df(df_output )
-  
-  st.write('Predicted values:')
 
-  st.checkbox("Use container width", value=False, key="use_container_width")
-
-  st.dataframe(df_output, use_container_width=st.session_state.use_container_width)
   st.download_button(
-      label="Download data as CSV",
-      data=csv,
-      file_name='large_df.csv',
+      label="Download data as xlsx",
+      data=df_output,
+      file_name= 'Prediction'+nametuple[0]+'.xlsx',
+  )
+  st.download_button(
+      label="Download data as csv",
+      data=df_output,
+      file_name= 'Prediction'+nametuple[0]+'.csv',
       mime='text/csv',
   )
   
+  st.write('Predicted values:')
+  st.dataframe(df_output)
 
 
 
