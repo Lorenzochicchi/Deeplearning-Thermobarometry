@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import pickle
 import os
-import io
+#import io
 
 def predict(data):
   control = 0 
@@ -74,10 +74,20 @@ def convert_df(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 
+def plothist(df):
+  targets = ['P (kbar)', 'T (K)']
+  for tg=[0,1]:
+    x = df['mean - ' + targets[tg]].values.reshape(-1, 1)
+    plt.figure()
+    plt.hist(df['mean - ' + targets[tg_k]].values,  bins=[i/2 for i in range(-10,21)], density=True, edgecolor='k', color='tab:green',label='hist')
+    plt.title(pressure distribution, fontsize=13)
+    plt.xlabel('P(kbar)', fontsize=13)
+    plt.show()  
+
   
-st.title("Deep 4 Vulcanos")
+st.title("Deeplearning 4 Vulcanoes")
 st.header("A deep learning based model to predict temperatures and pressures of vulcanos" )
-st.text("The D4V model take as input a dataset of clinopyroxene concentrations...")
+st.text("The D4V model take as input a dataset of clinopyroxene concentrations..")
 
 
 uploaded_file = st.file_uploader("Choose a file")
@@ -101,15 +111,15 @@ if uploaded_file is not None:
 if st.button('Starting prediction'):
   df_output = predict(df)
   csv = convert_df(df_output )
-  towrite = io.BytesIO()
-  excel = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
+  #towrite = io.BytesIO()
+  #excel = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
 
-  st.download_button(
-      label="Download data as xlsx",
-      data=excel,
-      file_name= 'Prediction'+nametuple[0]+'.xlsx',
-      mime='application/vnd.ms-excel'
-  )
+  #st.download_button(
+  #    label="Download data as xlsx",
+  #    data=excel,
+  #    file_name= 'Prediction'+nametuple[0]+'.xlsx',
+  #    mime='application/vnd.ms-excel'
+  #)
   
   st.download_button(
       label="Download data as csv",
@@ -121,8 +131,10 @@ if st.button('Starting prediction'):
   st.write('Predicted values:')
   st.dataframe(df_output)
 
-
-
+  if st.button('Plot Histogram'):
+    plothist(df_output)
+ 
+  
 
 
 
