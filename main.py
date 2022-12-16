@@ -59,7 +59,7 @@ def predict(data):
       input_sections = ['only_cpx', 'cpx_and_liq']
       sect = input_sections[im_s]
 
-      with open(directory + '/Modello_' + names_target + '_' + sect + '/Global_variable.pickle', 'rb') as handle:
+      with open(directory + '/mod_' + names_target + '_' + sect + '/Global_variable.pickle', 'rb') as handle:
           g = pickle.load(handle)
       N = g['N']
       array_max = g['array_max']
@@ -77,7 +77,7 @@ def predict(data):
       for e in range(N):
           print(e)
           model = tf.keras.models.load_model(
-              directory + "/Modello_" + names_target + '_' + sect + "/Bootstrap_model_" + str(e) + '.h5')
+              directory + "/mod_" + names_target + '_' + sect + "/Bootstrap_model_" + str(e) + '.h5')
           results[:, e] = model(df1.values.astype('float32')).numpy().reshape((len(df1),))
 
       results = results * array_max[0]
