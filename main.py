@@ -107,6 +107,7 @@ if st.button('Starting prediction'):
       label="Download data as xlsx",
       data=df_output,
       file_name= 'Prediction'+nametuple[0]+'.xlsx',
+      mime='text/csv'
   )
   st.download_button(
       label="Download data as csv",
