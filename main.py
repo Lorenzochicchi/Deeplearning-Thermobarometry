@@ -13,6 +13,7 @@ import os
 #import io
 from PIL import Image
 import base64
+import time
 
 def predict(data):
   control = 0 
@@ -116,6 +117,17 @@ st.text("The D4V model take as input a dataset of clinopyroxene concentrations..
 set_png_as_page_bg('./imgs/Background.png')
 
 uploaded_file = st.file_uploader("Choose a file")
+
+# Add a placeholder
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+  # Update the progress bar with each iteration.
+  latest_iteration.text(f'Iteration {i+1}')
+  bar.progress(i + 1)
+  time.sleep(0.1)
+
 if uploaded_file is not None:
   filename = uploaded_file.name
   nametuple = os.path.splitext(filename)
