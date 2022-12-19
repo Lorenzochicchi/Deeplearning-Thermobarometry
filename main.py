@@ -99,7 +99,7 @@ def set_png_as_page_bg(png_file):
   
 def plothist(df_output):
   targets = ['P (kbar)', 'T (K)']
-  col = ['tab:green','tab:red'}
+  col = ['tab:green','tab:red']
   titles = ['pressure distribution', 'temperature distribution']
   fig, ax = plt.subplots(1,2, figsize=(8,6))
   for tg in [0,1]:
