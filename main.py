@@ -107,7 +107,7 @@ def plothist(df_output):
     ax[tg].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color=col[tg],label='hist')
     ax[tg].set_title(titles[tg], fontsize=13)
     ax[tg].set_xlabel(targets[tg], fontsize=13)
-  fig.tight_layout(pad=2.0)
+  fig.tight_layout(pad=8.0)
   st.pyplot(fig)
   
 
