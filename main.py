@@ -122,7 +122,7 @@ st.set_page_config(
 
 col1, col2, col3 = st.columns(3)
 
-with co1:
+with col1:
   st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"Who we are"}</p>', unsafe_allow_html=True)
 
 with col2:
