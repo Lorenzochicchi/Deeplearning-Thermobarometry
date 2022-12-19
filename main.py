@@ -128,6 +128,8 @@ st.markdown(f'<p style="color:#ffffff; font-size:36px;border-radius:2%;">{"Deepl
 st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"A deep learning based model to predict temperatures and pressures of vulcanoss"}</p>', unsafe_allow_html=True)
 st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The D4V model take as input a dataset of clinopyroxene concentrations.."}</p>', unsafe_allow_html=True)
 
+st.info("Upload a .xlsx or .csv file with the following structure:")
+
 set_png_as_page_bg('./imgs/Background.png')
 
 uploaded_file = st.file_uploader("Choose a file")
