@@ -102,12 +102,12 @@ def plothist(df_output):
   targets = ['P (kbar)', 'T (K)']
   col = ['tab:green','tab:red']
   titles = ['pressure distribution', 'temperature distribution']
-  fig, ax = plt.subplots(3,4, figsize=(8,6), width_ratios=[1.,4.,4., 1.],height_ratios=[1.,8.,1.])
+  fig, ax = plt.subplots(1,2, figsize=(8,6))
   for tg in [0,1]:
     x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
-    ax[1, tg+1].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color=col[tg],label='hist')
-    ax[1, tg+1].set_title(titles[tg], fontsize=13)
-    ax[1, tg+1].set_xlabel(targets[tg], fontsize=13)
+    ax[tg].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color=col[tg],label='hist')
+    ax[tg].set_title(titles[tg], fontsize=13)
+    ax[tg].set_xlabel(targets[tg], fontsize=13)
   fig.tight_layout(pad=2.0)
   st.pyplot(fig)
   
