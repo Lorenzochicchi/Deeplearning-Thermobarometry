@@ -12,6 +12,7 @@ import pickle
 import os
 #import io
 from PIL import Image
+import base64
 
 def predict(data):
   control = 0 
@@ -81,7 +82,7 @@ def get_base64(bin_file):
     return base64.b64encode(data).decode()
 
 def set_png_as_page_bg(png_file):
-    bin_str = get_base64_of_bin_file2(png_file) 
+    bin_str = get_base64(png_file) 
     page_bg_img = '''
     <style>
     .stApp {
