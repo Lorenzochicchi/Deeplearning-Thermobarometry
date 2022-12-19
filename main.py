@@ -117,9 +117,13 @@ im = Image.open("D4V.ico")
 st.set_page_config(
     page_title="D4V",
     page_icon=im,
+    layout="wide"
 )
 
 col1, col2, col3 = st.columns(3)
+
+with co1:
+  st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"Who we are"}</p>', unsafe_allow_html=True)
 
 with col2:
   #st.title(":white[Deeplearning 4 Vulcanoes]")
