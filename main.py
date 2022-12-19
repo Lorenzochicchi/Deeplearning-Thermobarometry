@@ -118,15 +118,6 @@ set_png_as_page_bg('./imgs/Background.png')
 
 uploaded_file = st.file_uploader("Choose a file")
 
-# Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
-
-for i in range(100):
-  # Update the progress bar with each iteration.
-  latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
-  time.sleep(0.1)
 
 if uploaded_file is not None:
   filename = uploaded_file.name
@@ -147,6 +138,16 @@ if uploaded_file is not None:
 
 if st.button('Starting prediction'):
   df_output = predict(df)
+  
+  # Add a placeholder
+  latest_iteration = st.empty()
+  bar = st.progress(0)
+  for i in range(100):
+    # Update the progress bar with each iteration.
+    latest_iteration.text(f'Iteration {i+1}')
+    bar.progress(i + 1)
+    time.sleep(0.1)
+    
   csv = convert_df(df_output )
   #towrite = io.BytesIO()
   #excel = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
