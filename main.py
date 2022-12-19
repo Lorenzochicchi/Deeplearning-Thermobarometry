@@ -102,7 +102,6 @@ def plothist(df_output):
   targets = ['P (kbar)', 'T (K)']
   col = ['tab:green','tab:red']
   titles = ['pressure distribution', 'temperature distribution']
-  gs1 = gridspec.GridSpec(2, 1)
   fig, ax = plt.subplots(3,4, figsize=(8,6), width_ratios=[1.,4.,4., 1.],height_ratios=[1.,8.,1.])
   for tg in [0,1]:
     x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
