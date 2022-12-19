@@ -120,10 +120,10 @@ st.set_page_config(
 )
 
 #st.beta_set_page_config(page_title='Deep learning thermobarometer', page_icon = favicon, layout = 'wide', initial_sidebar_state = 'auto')
-st.title("Deeplearning 4 Vulcanoes")
+st.title(":white[Deeplearning 4 Vulcanoes]")
 #st.markdown(f'<p style="background-color:#ffffff;font-size:24px;border-radius:2%;">{"Description"}</p>', unsafe_allow_html=True)
-st.header("A deep learning based model to predict temperatures and pressures of vulcanos" )
-st.text("The D4V model take as input a dataset of clinopyroxene concentrations..")
+st.header(":white[A deep learning based model to predict temperatures and pressures of vulcanos]" )
+st.text(":white[The D4V model take as input a dataset of clinopyroxene concentrations..]")
 
 set_png_as_page_bg('./imgs/Background.png')
 
