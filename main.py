@@ -99,13 +99,15 @@ def set_png_as_page_bg(png_file):
   
 def plothist(df_output):
   targets = ['P (kbar)', 'T (K)']
+  col = ['tab:green','tab:red'}
   titles = ['pressure distribution', 'temperature distribution']
-  fig, ax = plt.subplots(1,2, figsize=(6,12))
+  fig, ax = plt.subplots(1,2, figsize=(8,6))
   for tg in [0,1]:
     x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
-    ax[tg].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color='tab:green',label='hist')
+    ax[tg].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color=col[tg],label='hist')
     ax[tg].set_title(titles[tg], fontsize=13)
     ax[tg].set_xlabel(targets[tg], fontsize=13)
+  fig.tight_layout(pad=2.0)
   st.pyplot(fig)
   
 
