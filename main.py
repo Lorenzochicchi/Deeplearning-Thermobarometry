@@ -96,10 +96,17 @@ def set_png_as_page_bg(png_file):
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
-
   
-  
-  
+def plothist(df_output):
+  targets = ['P (kbar)', 'T (K)']
+  titles = ['pressure distribution', 'temperature distribution']
+  fig, ax = plt.subplots(1,2, figsize=(6,12))
+  for tg in [0,1]:
+    x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
+    ax[tg].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color='tab:green',label='hist')
+    ax[tg].set_title(titles[tg], fontsize=13)
+    ax[tg].set_xlabel(targets[tg], fontsize=13)
+  st.pyplot(fig)
   
 
     
@@ -136,7 +143,6 @@ if uploaded_file is not None:
     st.warning("File type wrong (you need to upload a csv, xls or xlsx file)") 
 
 
-
 if st.button('Starting prediction'):
   df_output = predict(df)
   
@@ -169,16 +175,7 @@ if st.button('Starting prediction'):
   
   st.write('Predicted values:')
   st.dataframe(df_output)
-  targets = ['P (kbar)', 'T (K)']
-  titles = ['pressure distribution', 'temperature distribution']
-  fig, ax = plt.subplots(1,2)
-  for tg in [0,1]:
-    x = df_output['mean - ' + targets[tg]].values.reshape(-1, 1)
-    ax[tg].hist(df_output['mean - ' + targets[tg]].values, density=True, edgecolor='k', color='tab:green',label='hist')
-    ax[tg].set_title(titles[tg], fontsize=13)
-    ax[tg].set_xlabel(targets[tg], fontsize=13)
-  st.pyplot(fig)
-
+  plothist(df_output)
 
 
 
