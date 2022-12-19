@@ -99,7 +99,7 @@ def set_png_as_page_bg(png_file):
   
   
   
-set_background('./imgs/background.png')
+
     
 im = Image.open("D4V.ico")
 st.set_page_config(
@@ -112,7 +112,7 @@ st.title("Deeplearning 4 Vulcanoes")
 st.header("A deep learning based model to predict temperatures and pressures of vulcanos" )
 st.text("The D4V model take as input a dataset of clinopyroxene concentrations..")
 
-
+set_png_as_page_bg('./imgs/Background.png')
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
