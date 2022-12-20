@@ -130,11 +130,11 @@ with col2:
   #st.header(":white[A deep learning based model to predict temperatures and pressures of vulcanos]" )
   #st.text(":white[The D4V model take as input a dataset of clinopyroxene concentrations..]")
 
-  st.markdown(f'<p style="color:#ffffff; font-size:36px;border-radius:2%;">{"Deeplearning 4 Vulcanoes"}</p>', unsafe_allow_html=True)
+  st.markdown(f'<p style="color:#ffffff; font-size:36px;border-radius:2%;">{"Deeplearning Thermobarometer"}</p>', unsafe_allow_html=True)
   st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"A deep learning based model to predict temperatures and pressures of vulcanoss"}</p>', unsafe_allow_html=True)
   st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The D4V model take as input a dataset of clinopyroxene concentrations.."}</p>', unsafe_allow_html=True)
 
-  st.info("Upload a .xlsx or .csv file with the following structure:")
+  st.markdown("Upload a .xlsx or .csv file with the following structure:")
 
   set_png_as_page_bg('./imgs/Background.png')
 
