@@ -120,76 +120,71 @@ st.set_page_config(
     layout="wide"
 )
 
-col1, col2, col3 = st.columns(3)
 
-with col1:
-  st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"Who we are"}</p>', unsafe_allow_html=True)
+#st.title(":white[Deeplearning 4 Vulcanoes]")
+#st.header(":white[A deep learning based model to predict temperatures and pressures of vulcanos]" )
+#st.text(":white[The D4V model take as input a dataset of clinopyroxene concentrations..]")
 
-with col2:
-  #st.title(":white[Deeplearning 4 Vulcanoes]")
-  #st.header(":white[A deep learning based model to predict temperatures and pressures of vulcanos]" )
-  #st.text(":white[The D4V model take as input a dataset of clinopyroxene concentrations..]")
+st.markdown(f'<p style="color:#ffffff; font-size:36px;border-radius:2%;">{"Deeplearning Thermobarometer"}</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"A deep learning based model to predict temperatures and pressures of vulcanoss"}</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The D4V model take as input a dataset of clinopyroxene concentrations.."}</p>', unsafe_allow_html=True)
 
-  st.markdown(f'<p style="color:#ffffff; font-size:36px;border-radius:2%;">{"Deeplearning Thermobarometer"}</p>', unsafe_allow_html=True)
-  st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"A deep learning based model to predict temperatures and pressures of vulcanoss"}</p>', unsafe_allow_html=True)
-  st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The D4V model take as input a dataset of clinopyroxene concentrations.."}</p>', unsafe_allow_html=True)
+st.markdown("Upload a .xlsx or .csv file with the following structure:")
 
-  st.markdown("Upload a .xlsx or .csv file with the following structure:")
+set_png_as_page_bg('./imgs/Background.png')
 
-  set_png_as_page_bg('./imgs/Background.png')
-
-  uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file")
 
 
-  if uploaded_file is not None:
-    filename = uploaded_file.name
-    nametuple = os.path.splitext(filename)
+if uploaded_file is not None:
+  filename = uploaded_file.name
+  nametuple = os.path.splitext(filename)
 
-    if nametuple[1] == '.csv':
-      #read csv
-      df = pd.read_csv(uploaded_file)
-      st.dataframe(df)
-    elif nametuple[1] == '.xls' or nametuple[1] == '.xlsx':
-      #read xls or xlsx
-      df = pd.read_excel(uploaded_file)
-      st.dataframe(df)
-    else:
-      st.warning("File type wrong (you need to upload a csv, xls or xlsx file)") 
+  if nametuple[1] == '.csv':
+    #read csv
+    df = pd.read_csv(uploaded_file)
+    st.dataframe(df)
+  elif nametuple[1] == '.xls' or nametuple[1] == '.xlsx':
+    #read xls or xlsx
+    df = pd.read_excel(uploaded_file)
+    st.dataframe(df)
+  else:
+    st.warning("File type wrong (you need to upload a csv, xls or xlsx file)") 
 
 
-  if st.button('Starting prediction'):
-    df_output = predict(df)
+if st.button('Starting prediction'):
+  df_output = predict(df)
 
-    # Add a placeholder
-    latest_iteration = st.empty()
-    bar = st.progress(0)
-    for i in range(100):
-      # Update the progress bar with each iteration.
-      latest_iteration.text(f'Iteration {i+1}')
-      bar.progress(i + 1)
-      time.sleep(0.1)
+  # Add a placeholder
+  latest_iteration = st.empty()
+  bar = st.progress(0)
+  for i in range(100):
+    # Update the progress bar with each iteration.
+    latest_iteration.text(f'Iteration {i+1}')
+    bar.progress(i + 1)
+    time.sleep(0.1)
 
-    csv = convert_df(df_output )
-    #towrite = io.BytesIO()
-    #excel = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
+  csv = convert_df(df_output )
+  #towrite = io.BytesIO()
+  #excel = df.to_excel(towrite, encoding='utf-8', index=False, header=True)
 
-    #st.download_button(
-    #    label="Download data as xlsx",
-    #    data=excel,
-    #    file_name= 'Prediction'+nametuple[0]+'.xlsx',
-    #    mime='application/vnd.ms-excel'
-    #)
+  #st.download_button(
+  #    label="Download data as xlsx",
+  #    data=excel,
+  #    file_name= 'Prediction'+nametuple[0]+'.xlsx',
+  #    mime='application/vnd.ms-excel'
+  #)
 
-    st.download_button(
-        label="Download data as csv",
-        data=csv,
-        file_name= 'Prediction_'+nametuple[0]+'.csv',
-        mime='text/csv',
-    )
+  st.download_button(
+      label="Download data as csv",
+      data=csv,
+      file_name= 'Prediction_'+nametuple[0]+'.csv',
+      mime='text/csv',
+  )
 
-    st.write('Predicted values:')
-    st.dataframe(df_output)
-    plothist(df_output)
+  st.write('Predicted values:')
+  st.dataframe(df_output)
+  plothist(df_output)
 
 
 
