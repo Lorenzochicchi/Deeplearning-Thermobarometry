@@ -113,7 +113,8 @@ def plothist(df_output):
   
 
     
-im = Image.open("D4V.ico")
+im = Image.open("logo_noBG.png")
+
 st.set_page_config(
     page_title="D4V",
     page_icon=im,
