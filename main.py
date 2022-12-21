@@ -204,7 +204,7 @@ if st.button('Starting prediction'):
   #)
 
   st.download_button(
-      label="Download data as csv",
+      label="Download data as csv!",
       data=csv,
       file_name= 'Prediction_'+nametuple[0]+'.csv',
       mime='text/csv',
@@ -216,7 +216,9 @@ if st.button('Starting prediction'):
 
   st.write('Predicted values:')
   st.dataframe(df_output)
-  plothist(df_output)
+  col1, col2 = st.columns([2])
+  with col1:
+        plothist(df_output)
 
   
 
