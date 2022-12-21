@@ -124,13 +124,13 @@ st.set_page_config(
 im2 = Image.open("logo_noBG.png")
 
 
-col1, col2 = st.columns([1.5,1])
+col1, col2 = st.columns([1.2,1])
 with col1:
   st.title("Deeplearning Thermobarometer")
   st.header("A deep learning model to predict temperatures and pressures of vulcanoes" )
   st.write("The model is based on [cit.] and use artificial neural networks to estimate the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks.\n Please see the info page to more information. ")
 with col2:
-  st.image(im2, width=400)
+  st.image(im2, width=350)
 
 
 #link_info = '[info](https://lorenzochicchi-deeplearning-thermobarometry-main-b2fjar.streamlit.app/info)'
