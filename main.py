@@ -122,9 +122,9 @@ st.set_page_config(
 )
 
 
-st.title("Deeplearning Thermobarometer]")
+st.title("Deeplearning Thermobarometer")
 st.header("A deep learning model to predict temperatures and pressures of vulcanoes" )
-st.text(":The model is based on [cit.] and use artificial neural networks to estimate the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks. Please see the info page to more information. ")
+st.write("The model is based on [cit.] and use artificial neural networks to estimate the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks. Please see the info page to more information. ")
 
 
 #link_info = '[info](https://lorenzochicchi-deeplearning-thermobarometry-main-b2fjar.streamlit.app/info)'
