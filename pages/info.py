@@ -28,7 +28,7 @@ st.title("Info")
 st.header("References")
 
 st.header("Input structure")
-st.write("The input dataset must be a .csv o .xlsx file with the following structure:")
+st.write("The input dataset must be a .xlsx file with the following structure:")
 st.write("**Only clinopyroxene dataset:**")
 df = pd.read_excel('pages/Example_input.xlsx')
 st.table(df)
