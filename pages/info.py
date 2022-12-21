@@ -27,7 +27,7 @@ df = pd.read_excel('pages/Example_input.xlsx')
 st.table(df)
 
 df_empy = pd.read_excel('pages/Form_input.xlsx') 
-df_xlsx = to_excel(df)
+df_xlsx = to_excel(df_empy)
 st.download_button(label='Download an empty form here!',
                                 data=df_xlsx ,
                                 file_name= 'Empty_form.xlsx')
