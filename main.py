@@ -209,12 +209,16 @@ if st.button('Starting prediction'):
       file_name= 'Prediction_'+nametuple[0]+'.csv',
       mime='text/csv',
   )
+  df_xlsx_pred = to_excel(df_empy)
+  st.download_button(label='Download data as xlsx!',
+                                data=df_xlsx_pred ,
+                                file_name= 'Empty_form.xlsx')
 
   st.write('Predicted values:')
   st.dataframe(df_output)
   plothist(df_output)
 
-
+  
 
 
 
