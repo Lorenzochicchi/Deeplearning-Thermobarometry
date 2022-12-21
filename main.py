@@ -126,7 +126,7 @@ im2 = Image.open("logo_noBG.png")
 st.title("Deeplearning Thermobarometer")
 st.header("A deep learning model to predict temperatures and pressures of vulcanoes" )
 
-col1, col = st.columns(2)
+col1, col2 = st.columns(2)
 
 with col1:
   st.image(im2, width=200)
