@@ -121,9 +121,11 @@ st.set_page_config(
     layout="wide"
 )
 
+im2 = Image.open("logo.png")
 
 st.title("Deeplearning Thermobarometer")
 st.header("A deep learning model to predict temperatures and pressures of vulcanoes" )
+st.image(im2)
 st.write("The model is based on [cit.] and use artificial neural networks to estimate the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks.\n Please see the info page to more information. ")
 
 
