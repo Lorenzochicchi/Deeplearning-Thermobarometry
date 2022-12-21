@@ -17,6 +17,12 @@ def to_excel(df):
     processed_data = output.getvalue()
     return processed_data
 
+
+st.set_page_config(
+    page_title="Deep Thermobarometer",
+    page_icon=im,
+    layout="wide"
+)
 st.title("Info")
 st.header("References")
 
