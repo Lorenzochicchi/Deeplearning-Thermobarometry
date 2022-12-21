@@ -1,5 +1,5 @@
 import streamlit as st
-import pandas as ps
+import pandas as pd
 
 st.title("Info")
 st.header("References")
