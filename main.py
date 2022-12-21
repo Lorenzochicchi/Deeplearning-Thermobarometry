@@ -116,7 +116,7 @@ def plothist(df_output):
 im = Image.open("logo_noBG.png")
 
 st.set_page_config(
-    page_title="D4V",
+    page_title="Deep Thermobarometer",
     page_icon=im,
     layout="wide"
 )
@@ -125,12 +125,14 @@ st.set_page_config(
 #st.title(":white[Deeplearning 4 Vulcanoes]")
 #st.header(":white[A deep learning based model to predict temperatures and pressures of vulcanos]" )
 #st.text(":white[The D4V model take as input a dataset of clinopyroxene concentrations..]")
+link_info = '[info](https://lorenzochicchi-deeplearning-thermobarometry-main-b2fjar.streamlit.app/info)'
 
 st.markdown(f'<p style="color:#ffffff; font-size:36px;border-radius:2%;">{"Deeplearning Thermobarometer"}</p>', unsafe_allow_html=True)
-st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"A deep learning based model to predict temperatures and pressures of vulcanoss"}</p>', unsafe_allow_html=True)
-st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The D4V model take as input a dataset of clinopyroxene concentrations.."}</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"A deep learning model to predict temperatures and pressures of vulcanoss"}</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The model is based on [cit.] and use artificial neural networks to estimate\\
+the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks. Plese see the"+ "page to more information. "}</p>', unsafe_allow_html=True)
 
-st.markdown("Upload a .xlsx or .csv file with the following structure:")
+st.markdown("Upload a .xlsx or .csv file with the structure specified in the INFO page.")
 
 set_png_as_page_bg('./imgs/Background.png')
 
