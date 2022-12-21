@@ -129,7 +129,7 @@ link_info = '[info](https://lorenzochicchi-deeplearning-thermobarometry-main-b2f
 
 st.markdown(f'<p style="color:#ffffff; font-size:36px;border-radius:2%;">{"Deeplearning Thermobarometer"}</p>', unsafe_allow_html=True)
 st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"A deep learning model to predict temperatures and pressures of vulcanoss"}</p>', unsafe_allow_html=True)
-st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The model is based on [cit.] and use artificial neural networks to estimate the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks. Plese see the"+ "page to more information. "}</p>', unsafe_allow_html=True)
+st.markdown(f'<p style="color:#ffffff; font-size:28px;border-radius:2%;">{"The model is based on [cit.] and use artificial neural networks to estimate the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks. Plese see the"+ st.markdown(link, unsafe_allow_html=True)+"page to more information. "}</p>', unsafe_allow_html=True)
 
 st.markdown("Upload a .xlsx or .csv file with the structure specified in the INFO page.")
 
