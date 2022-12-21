@@ -123,11 +123,10 @@ st.set_page_config(
 
 im2 = Image.open("logo_noBG.png")
 
-st.title("Deeplearning Thermobarometer")
-
 
 col1, col2 = st.columns(2)
 with col1:
+  st.title("Deeplearning Thermobarometer")
   st.header("A deep learning model to predict temperatures and pressures of vulcanoes" )
   st.write("The model is based on [cit.] and use artificial neural networks to estimate the temperature and the pressure of the magma chambers by starting from the geochimical analysis of the rocks.\n Please see the info page to more information. ")
 with col2:
