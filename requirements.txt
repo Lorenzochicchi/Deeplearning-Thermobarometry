@@ -2,3 +2,4 @@ tensorflow
 matplotlib
 pandas
 openpyxl
+pyxlsb
