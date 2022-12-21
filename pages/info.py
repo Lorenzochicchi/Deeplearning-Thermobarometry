@@ -34,6 +34,7 @@ with col1:
     im = Image.open("imgs/simone.png")
     st.image(im,use_column_width=True, caption='The mind')
 with col2:
+    st.write(#)
     im = Image.open("imgs/luca.png")
     st.image(im,use_column_width=True, caption='A Big director')
 with col3:
