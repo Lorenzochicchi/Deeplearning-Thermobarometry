@@ -121,7 +121,7 @@ st.set_page_config(
     layout="wide"
 )
 
-im2 = Image.open("logo.png")
+im2 = Image.open("logo_noBG.png")
 
 st.title("Deeplearning Thermobarometer")
 st.header("A deep learning model to predict temperatures and pressures of vulcanoes" )
