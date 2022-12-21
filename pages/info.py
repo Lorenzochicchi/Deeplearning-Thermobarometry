@@ -36,7 +36,7 @@ with col1:
 with col2:
     st.write("#")
     im = Image.open("imgs/luca.png")
-    st.image(im,use_column_width=True, caption='A Big director')
+    st.image(im,use_column_width=True, caption='A big director')
 with col3:
     im = Image.open("imgs/duccio.png")
     st.image(im,use_column_width=True, caption='Another big director')
