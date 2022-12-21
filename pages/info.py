@@ -28,7 +28,7 @@ st.set_page_config(
 
 st.title("Info")
 st.header("References")
-col1, col2,col3, col4 = st.columns(4)
+col1, col2,col3, col4 = st.columns([1,1.5,1.5,1])
 
 with col1:
     im = Image.open("imgs/simone.png")
