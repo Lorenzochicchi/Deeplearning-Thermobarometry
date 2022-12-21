@@ -17,7 +17,7 @@ def to_excel(df):
     processed_data = output.getvalue()
     return processed_data
 
-
+im = Image.open("logo_noBG.png")
 st.set_page_config(
     page_title="Deep Thermobarometer",
     page_icon=im,
