@@ -28,7 +28,7 @@ st.table(df)
 
 df_xlsx = to_excel(df)
 st.download_button(label='Download an empty form here!',
-                                data=df ,
-                                file_name= 'df_test.xlsx')
+                                data=df_xlsx ,
+                                file_name= 'Empty_form.xlsx')
 
 
