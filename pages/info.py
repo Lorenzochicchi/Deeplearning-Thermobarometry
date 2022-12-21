@@ -31,16 +31,16 @@ st.header("References")
 col1, col2,col3, col4 = st.columns(4)
 
 with col1:
-    im = Image.open("simone.png")
+    im = Image.open("img/simone.png")
     st.image(im,use_column_width=True, caption='The mind')
 with col2:
-    im = Image.open("luca.png")
+    im = Image.open("img/luca.png")
     st.image(im,use_column_width=True, caption='A Big director')
 with col3:
-    im = Image.open("duccio.png")
+    im = Image.open("img/duccio.png")
     st.image(im,use_column_width=True, caption='Another big director')
 with col4:
-    im = Image.open("lorenzo.jpeg")
+    im = Image.open("img/lorenzo.jpeg")
     st.image(im,use_column_width=True, caption= 'The poor Phd student')
 
 st.header("Input structure")
