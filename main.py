@@ -209,7 +209,7 @@ if st.button('Starting prediction'):
       file_name= 'Prediction_'+nametuple[0]+'.csv',
       mime='text/csv',
   )
-  df_xlsx_pred = to_excel(df_empy)
+  df_xlsx_pred = to_excel(df_output)
   st.download_button(label='Download data as xlsx!',
                                 data=df_xlsx_pred ,
                                 file_name= 'Empty_form.xlsx')
