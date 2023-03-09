@@ -132,14 +132,14 @@ for tg in [0, 1]:
                     verbose=1
                     )
 
-            # save the result and the variable
+            # save the result and the variables
             eva = mod(x_val.values)
             results[e, ascending_index.loc[x_val_ind]] = eva[:, 0]
             count[ascending_index.loc[x_val_ind]] += 1
 
-            mod.save("main/mod_" + names_target + '_' + sect + "/Bootstrap_model_" + str(e) + '.h5')
+            mod.save("mod_" + names_target + '_' + sect + "/Bootstrap_model_" + str(e) + '.h5')
             diz1 = {'x_val_ind': x_val_ind}
-            with open('main/mod_' + names_target + '_' + sect + '/Local_variables' + str(e) + '.pickle',
+            with open('mod_' + names_target + '_' + sect + '/Local_variables' + str(e) + '.pickle',
                       'wb') as handle:
                 pickle.dump(diz1, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
@@ -156,10 +156,10 @@ for tg in [0, 1]:
             pred_std.append(np.std(l))
         pred_std = np.array(pred_std)
 
-        # save global variable
+        # save global variables
         diz = {'N': N, 'ascending_index': ascending_index, 'array_max': array_max, 'pred_mean': pred_mean,
                'pred_std': pred_std, 'x_train': x_train, 'x_test': x_test, 'y_train': y_train,
                'y_test': y_test, 'count': count, 'in_s': in_s}
 
-        with open('main/mod_' + names_target + '_' + sect + '/Global_variable.pickle', 'wb') as handle:
+        with open('mod_' + names_target + '_' + sect + '/Global_variable.pickle', 'wb') as handle:
             pickle.dump(diz, handle, protocol=pickle.HIGHEST_PROTOCOL)
