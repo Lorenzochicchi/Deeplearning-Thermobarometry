@@ -157,7 +157,6 @@ for tg in [0, 1]:
         pred_std = np.array(pred_std)
 
         # save global variable
-
         diz = {'N': N, 'ascending_index': ascending_index, 'array_max': array_max, 'pred_mean': pred_mean,
                'pred_std': pred_std, 'x_train': x_train, 'x_test': x_test, 'y_train': y_train,
                'y_test': y_test, 'count': count, 'in_s': in_s}
