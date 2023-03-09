@@ -32,7 +32,7 @@ col1, col2,col3, col4 = st.columns([1,1.45,1.5,1])
 
 with col1:
     im = Image.open("imgs/simone.png")
-    st.image(im,use_column_width=True, caption='Università degli Studi di Firenze, Dipartimento di Scienze della Terra )
+    st.image(im,use_column_width=True, caption='Università degli Studi di Firenze, Dipartimento di Scienze della Terra')
 with col2:
     st.write("#")
     im = Image.open("imgs/luca.png")
