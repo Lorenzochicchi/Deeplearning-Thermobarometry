@@ -32,17 +32,17 @@ col1, col2,col3, col4 = st.columns([1,1.45,1.5,1])
 
 with col1:
     im = Image.open("imgs/simone.png")
-    st.image(im,use_column_width=True, caption='The mind')
+    st.image(im,use_column_width=True, caption='Università degli Studi di Firenze, Dipartimento di Scienze della Terra )
 with col2:
     st.write("#")
     im = Image.open("imgs/luca.png")
-    st.image(im,use_column_width=True, caption='A big director')
+    st.image(im,use_column_width=True, caption='Università degli Studi di Firenze, Dipartimento di Scienze della Terra')
 with col3:
     im = Image.open("imgs/duccio.png")
-    st.image(im,use_column_width=True, caption='Another big director')
+    st.image(im,use_column_width=True, caption='Università degli Studi di Firenze, Dipartimento di Fisica e Astrofisica, INFN')
 with col4:
     im = Image.open("imgs/lorenzo.jpeg")
-    st.image(im,use_column_width=True, caption= 'The poor Phd student')
+    st.image(im,use_column_width=True, caption= 'Università degli Studi di Firenze, Dipartimento di Fisica e Astrofisica, INFN')
 
 st.header("Input structure")
 st.write("The input dataset must be a .xlsx file with the following structure:")
