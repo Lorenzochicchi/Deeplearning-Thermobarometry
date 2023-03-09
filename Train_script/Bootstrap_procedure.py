@@ -70,7 +70,7 @@ for tg in [0, 1]:
         liq_col = [col[i] for i in range(3, 11)]
         cpx_col = [col[i] for i in range(11, 22)]
         # check columns:
-        boolean_col = [col[i] for i in range(30, 33)]
+        boolean_col = [col[i] for i in range(22, 24)]
 
         # Drop the liq columns for only_cpx case, remove rows with False in the check columns and the ones with Nan values
         if sect == 'only_cpx':
